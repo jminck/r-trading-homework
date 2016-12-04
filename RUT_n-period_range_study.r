@@ -1,14 +1,11 @@
-setwd("C:/Users/Shobeir/Desktop/Fiverr/20160330/josephminckler/")
+setwd("~/R")
 require(quantmod)
 require(TTR)
 library(dplyr)
 
-#install.packages("psych",dependencies=TRUE) #the minimum requirement or
-#install.packages(c("psych","GPArotation"),dependencies=TRUE) #required for factor analysis
+#Russell 2000
+#there is no RVX data avilable in Yahoo AFAIK so including VIX instead
 
-library(psych) #Only need to make psych active once a session
-
-#S&P 500
 getSymbols(c("^RUT", "^VIX"), from="2000-01-01")
 len <- 20
 min(tail(RUT$RUT.Low, len))
